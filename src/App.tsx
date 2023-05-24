@@ -6,6 +6,7 @@ import './App.css'
 import Register from './pages/Register/Register';
 import Reset from './pages/Reset/Reset';
 import Dashboard from './pages/Dashboard/Dashboard';
+import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage'
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/reset" element={<Reset />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
   )
