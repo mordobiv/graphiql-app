@@ -1,7 +1,7 @@
 const translations = {
   login: {
     ru: "Войти",
-    en: "Loginzxc",
+    en: "Login",
   },
   switchLanguage: {
     en: "Switch language",

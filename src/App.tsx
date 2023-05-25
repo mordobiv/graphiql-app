@@ -13,7 +13,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         {/* <Route index path="/" element={<Welcome />} /> */}
-        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/reset" element={<Reset />} />
         <Route path="/dashboard" element={<Dashboard />} />
