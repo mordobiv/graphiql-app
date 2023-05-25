@@ -1,5 +1,6 @@
 import { logout } from "../../firebase";
 import { useNavigate } from "react-router-dom";
+import { getLocalizedText } from "../../services/localization-service";
 
 export default function SignOut() {
   const navigate = useNavigate();
@@ -9,6 +10,6 @@ export default function SignOut() {
         logout();
         navigate('/welcome');
       }}
-    >Sign out</button>
+    >{getLocalizedText('signOut')}</button>
   );
 }
