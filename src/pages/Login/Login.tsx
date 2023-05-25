@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth, logInWithEmailAndPassword } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { getLocalizedText } from "../../services/localization-service";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
+
   useEffect(() => {
     if (loading) {
       // maybe trigger a loading screen
@@ -37,7 +39,7 @@ function Login() {
           className="login__btn"
           onClick={() => logInWithEmailAndPassword(email, password)}
         >
-          Login
+          {getLocalizedText('login')}
         </button>
         <div>
           <Link to="/reset">Forgot Password</Link>
@@ -49,4 +51,5 @@ function Login() {
     </div>
   );
 }
+
 export default Login;
