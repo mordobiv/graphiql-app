@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom';
+import LanguageSelection from '../Header/Language';
 import styles from './layout.module.scss';
 
 export default function Layout() {
@@ -8,6 +9,7 @@ export default function Layout() {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/about">About</NavLink>
         <NavLink to="/custom">Add Card</NavLink>
+        <LanguageSelection />
       </header>
       <Outlet />
     </>
