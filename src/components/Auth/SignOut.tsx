@@ -4,6 +4,7 @@ import { getLocalizedText } from "../../services/localization-service";
 
 export default function SignOut() {
   const navigate = useNavigate();
+  
   return (
     <button 
       onClick={() => {

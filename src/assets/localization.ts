@@ -1,7 +1,7 @@
 const translations = {
   login: {
-    ru: "Войти",
     en: "Login",
+    ru: "Войти",
   },
   switchLanguage: {
     en: "Switch language",
@@ -18,6 +18,10 @@ const translations = {
   signUp: {
     en: 'Sign Up',
     ru: 'Зарегистрироваться',
+  },
+  goToMainPage: {
+    en: 'Go to main page',
+    ru: 'На главную',
   },
 };
 
