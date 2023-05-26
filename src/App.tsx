@@ -6,7 +6,6 @@ import './App.css'
 import GraphQl from './pages/GraphQl/Graphql';
 import Register from './pages/Register/Register';
 import Reset from './pages/Reset/Reset';
-import Dashboard from './pages/Dashboard/Dashboard';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage'
 
 export default function App() {
@@ -18,7 +17,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/reset" element={<Reset />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/welcome" element={<Welcome />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
