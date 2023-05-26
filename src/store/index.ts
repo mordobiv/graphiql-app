@@ -1,8 +1,10 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import languageReducer from './language';
+import graphiqlReducer from './graphiql';
 
 const rootReducer = combineReducers({
   languageReducer,
+  graphiqlReducer,
 });
 
 const store = configureStore({
