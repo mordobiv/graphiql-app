@@ -5,10 +5,14 @@ const graphiqlReducer = createSlice({
   initialState: {
     query: '',
     response: '',
+    variables: '',
   },
   reducers: {
     setQuery(state, action) {
       state.query = action.payload;
+    },
+    setVariables(state, action) {
+      state.variables = action.payload;
     },
     setRepsonse(state, action) {
       state.response = action.payload;
@@ -17,4 +21,4 @@ const graphiqlReducer = createSlice({
 });
 
 export default graphiqlReducer.reducer;
-export const { setQuery, setRepsonse } = graphiqlReducer.actions;
+export const { setQuery, setRepsonse, setVariables } = graphiqlReducer.actions;
