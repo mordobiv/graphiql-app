@@ -6,6 +6,7 @@ const graphiqlReducer = createSlice({
     query: '',
     response: '',
     variables: '',
+    headers: '',
   },
   reducers: {
     setQuery(state, action) {
@@ -16,9 +17,12 @@ const graphiqlReducer = createSlice({
     },
     setRepsonse(state, action) {
       state.response = action.payload;
-    }
+    },
+    setHeaders(state, action) {
+      state.headers = action.payload;
+    },
   },
 });
 
 export default graphiqlReducer.reducer;
-export const { setQuery, setRepsonse, setVariables } = graphiqlReducer.actions;
+export const { setQuery, setRepsonse, setVariables, setHeaders } = graphiqlReducer.actions;
