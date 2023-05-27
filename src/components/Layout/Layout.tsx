@@ -17,7 +17,7 @@ export default function Layout() {
         <Auth />
         <LanguageSelection />
       </header>
-      <main>
+      <main className={styles.main}>
         <Outlet />
       </main>
     </>

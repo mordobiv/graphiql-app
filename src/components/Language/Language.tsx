@@ -1,13 +1,13 @@
-import { getLocalizedText } from "../../services/localization-service";
-import { useAppDispatch } from "../../store/hooks"
-import { switchLanguage } from "../../store/language";
+import { getLocalizedText } from '../../services/localization-service'
+import { useAppDispatch } from '../../store/hooks'
+import { switchLanguage } from '../../store/language'
 
 export default function LanguageSelection() {
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
 
   return (
     <div>
-      <span onClick={() => dispatch(switchLanguage())}>{getLocalizedText('switchLanguage')}</span>
+      <button onClick={() => dispatch(switchLanguage())}>{getLocalizedText('switchLanguage')}</button>
     </div>
   )
 }
