@@ -3,7 +3,8 @@ import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { auth } from '../../firebase'
 import Auth from '../Auth/Auth'
 import LanguageSelection from '../Language/Language'
-import styles from './layout.module.scss'
+import styles from './layout.module.scss';
+import Footer from '../Footer/footer';
 
 export default function Layout() {
   const [user] = useAuthState(auth)
@@ -20,6 +21,7 @@ export default function Layout() {
       <main className={styles.main}>
         <Outlet />
       </main>
+      <Footer />
     </>
   )
 }
