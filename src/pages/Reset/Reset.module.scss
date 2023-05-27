@@ -1,0 +1,29 @@
+.reset {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+
+  .reset__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    
+    .reset__textBox {
+      width: 60%;
+      margin-bottom: 10px;
+    }
+
+    .reset__btn {
+      max-width: 90%;
+    }
+  }
+
+  .controls {
+
+    .register {
+      text-align: center;
+    }
+  }
+}

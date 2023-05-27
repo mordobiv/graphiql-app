@@ -3,10 +3,6 @@ const translations = {
     en: "Login",
     ru: "Войти",
   },
-  switchLanguage: {
-    en: "Switch language",
-    ru: "Переключить язык",
-  },
   signIn: {
     en: 'Sign In',
     ru: 'Войти',
@@ -17,7 +13,7 @@ const translations = {
   },
   signUp: {
     en: 'Sign Up',
-    ru: 'Зарегистрироваться',
+    ru: 'Регистрация',
   },
   goToMainPage: {
     en: 'Go to main page',
@@ -37,7 +33,11 @@ const translations = {
   },
   noAccount: {
     en: "Don't have an account?",
-    ru: "Не зарегестрированы?",
+    ru: "Не зарегистрированы?",
+  },
+  resetHint: {
+    en: "Send password reset email",
+    ru: "Выслать письмо для восстановления пароля",
   },
 };
 

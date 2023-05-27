@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { auth, sendPasswordReset } from "../../firebase";
+import { getLocalizedText } from "../../services/localization-service";
+import styles from './Reset.module.scss';
 
 function Reset() {
   const [email, setEmail] = useState("");
@@ -14,23 +16,25 @@ function Reset() {
   }, [user, loading]);
 
   return (
-    <div className="reset">
-      <div className="reset__container">
+    <div className={styles.reset}>
+      <div className={styles.reset__container}>
         <input
           type="text"
-          className="reset__textBox"
+          className={styles.reset__textBox}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="E-mail Address"
+          placeholder={getLocalizedText('email')}
         />
         <button
-          className="reset__btn"
+          className={styles.reset__btn}
           onClick={() => sendPasswordReset(email)}
         >
-          Send password reset email
+          {getLocalizedText('resetHint')}
         </button>
-        <div>
-          Don't have an account? <Link to="/register">Register</Link> now.
+      </div>
+      <div className={styles.controls}>
+        <div className={styles.register}>
+          {getLocalizedText('noAccount')} <Link to="/register">{getLocalizedText('signUp')}</Link>
         </div>
       </div>
     </div>
