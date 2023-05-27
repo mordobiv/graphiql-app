@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { auth, logInWithEmailAndPassword } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { getLocalizedText } from "../../services/localization-service";
+import styles from './Login.module.scss';
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -19,33 +20,37 @@ function Login() {
   }, [user, loading]);
 
   return (
-    <div className="login">
-      <div className="login__container">
-        <input
-          type="text"
-          className="login__textBox"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="E-mail Address"
-        />
-        <input
-          type="password"
-          className="login__textBox"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-        />
+    <div className={styles.login}>
+      <div className={styles.login__container}>
+        <div className={styles.login_fields}>
+          <input
+            type="text"
+            className={styles.login__textBox}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder={getLocalizedText('email')}
+          />
+          <input
+            type="password"
+            className={styles.login__textBox}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder={getLocalizedText('password')}
+          />
+        </div>
         <button
-          className="login__btn"
+          className={styles.login__btn}
           onClick={() => logInWithEmailAndPassword(email, password)}
         >
           {getLocalizedText('login')}
         </button>
-        <div>
-          <Link to="/reset">Forgot Password</Link>
+      </div>
+      <div className={styles.controls}>
+        <div className={styles.forgot}>
+          <Link to="/reset">{getLocalizedText('forgotPassword')}</Link>
         </div>
-        <div>
-          Don't have an account? <Link to="/register">Register</Link> now.
+        <div className={styles.register}>
+          {getLocalizedText('noAccount')} <Link to="/register">{getLocalizedText('signUp')}</Link>
         </div>
       </div>
     </div>
