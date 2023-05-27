@@ -47,6 +47,30 @@ const translations = {
     en: "Already have an account?",
     ru: "Вы уже зарегестрированы?",
   },
+  welcome: {
+    en: "Welcome!",
+    ru: "Здравствуйте!",
+  },
+  startDate: {
+    en: "Start date",
+    ru: "Начало курса",
+  },
+  project: {
+    en: "project",
+    ru: "проект",
+  },
+  team: {
+    en: 'Team',
+    ru: 'Команда',
+  },
+  dzmitry: {
+    en: 'Dzmitry Aniskovich',
+    ru: "Дмитрий Аниськович",
+  },
+  miras: {
+    en: "Miras Suleimen",
+    ru: "Мирас Сулеймен"
+  }
 };
 
 export default translations;

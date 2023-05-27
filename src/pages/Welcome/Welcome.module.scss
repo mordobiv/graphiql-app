@@ -1,0 +1,29 @@
+.welcome_page {
+  margin: 5%;
+
+  .welcome__text {
+    text-align: center;
+    margin: 30px;
+  }
+
+  .course {
+    margin-bottom: 30px;
+  }
+
+  .project {
+    margin-bottom: 30px;
+  }
+
+  .team {
+    .team_header {
+      text-align: center;
+    }
+
+    .team_members {
+      display: flex;
+      justify-content: space-around;
+      padding: 30px;
+      // flex-direction: co;
+    }
+  }
+}
