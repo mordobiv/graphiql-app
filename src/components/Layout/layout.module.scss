@@ -1,9 +1,21 @@
 .header {
-  font-size: 2rem;
-  background-color: #242424;
-  width: 100%;
-  justify-content: center;
-  padding-bottom: 40px;
+  position: sticky;
+  top: 0;
+  padding: 10px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s, height 0.3s;
+}
+
+.header button {
+  background-color: #3498db;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.header button:hover {
+  background-color: #2980b9;
 }

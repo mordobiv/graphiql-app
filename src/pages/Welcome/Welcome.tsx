@@ -1,9 +1,7 @@
 export default function Welcome() {
   return (
     <>
-      <div>
-        Welcome!
-      </div>
+      <div>Welcome!</div>
       <div>
         <div>RS School</div>
         <div>React FE 2023 Q1</div>
@@ -15,23 +13,19 @@ export default function Welcome() {
       <div>
         <div>GraphiQL project</div>
         <div>
-          GraphQL is an open-source data query and manipulation language for APIs and a query runtime engine. 
-          GraphQL enables declarative data fetching where a client can specify exactly what data it needs from an API. 
+          GraphQL is an open-source data query and manipulation language for APIs and a query runtime engine. GraphQL
+          enables declarative data fetching where a client can specify exactly what data it needs from an API.
         </div>
       </div>
       <div>
-        <div>
-          Team:
-        </div>
+        <div>Team:</div>
         <div>
           <div>Dzmitry Aniskovich</div>
         </div>
         <div>
-          <div>
-            Miras Suleymen
-          </div>
+          <div>Miras Suleimen</div>
         </div>
       </div>
     </>
-  );
+  )
 }
