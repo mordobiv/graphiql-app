@@ -39,6 +39,14 @@ const translations = {
     en: "Send password reset email",
     ru: "Выслать письмо для восстановления пароля",
   },
+  fullName: {
+    en: "Full Name",
+    ru: "Полное имя",
+  },
+  alreadyHaveAccount: {
+    en: "Already have an account?",
+    ru: "Вы уже зарегестрированы?",
+  },
 };
 
 export default translations;

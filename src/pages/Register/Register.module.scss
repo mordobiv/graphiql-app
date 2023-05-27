@@ -1,0 +1,17 @@
+.register__container {
+  display: flex;
+  margin-bottom: 40px;
+  
+  .register__fields {
+    display: flex;
+    flex-direction: column;
+
+    .register__textBox {
+      margin: 10px;
+    }
+  }
+
+  .register__btn {
+    width: 140px;
+  }
+}
