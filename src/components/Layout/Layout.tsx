@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from "../../firebase";
 import { useNavigate } from 'react-router-dom';
+import Footer from '../Footer/footer';
 
 export default function Layout() {
   const [user] = useAuthState(auth);
@@ -21,6 +22,7 @@ export default function Layout() {
         <LanguageSelection />
       </header>
       <Outlet />
+      <Footer />
     </>
   );
 }
