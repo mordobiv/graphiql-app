@@ -75,6 +75,14 @@ const translations = {
     en: "Reset password",
     ru: "Восстановить пароль",
   },
+  variables: {
+    en: 'Variables',
+    ru: 'Переменные',
+  },
+  headers: {
+    en: 'Headers',
+    ru: 'Заголовки',
+  },
 };
 
 export default translations;

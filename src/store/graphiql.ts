@@ -7,6 +7,8 @@ const graphiqlReducer = createSlice({
     response: '',
     variables: '',
     headers: '',
+    isVariablesSectionHidden: true,
+    isHeadersSectionHidden: true,
   },
   reducers: {
     setQuery(state, action) {
@@ -21,8 +23,14 @@ const graphiqlReducer = createSlice({
     setHeaders(state, action) {
       state.headers = action.payload;
     },
+    switchVariablesSection(state, action) {
+      state.isVariablesSectionHidden = action.payload;
+    },
+    switchHeadersSection(state, action) {
+      state.isHeadersSectionHidden = action.payload;
+    },
   },
 });
 
 export default graphiqlReducer.reducer;
-export const { setQuery, setRepsonse, setVariables, setHeaders } = graphiqlReducer.actions;
+export const { setQuery, setRepsonse, setVariables, setHeaders, switchVariablesSection, switchHeadersSection } = graphiqlReducer.actions;
