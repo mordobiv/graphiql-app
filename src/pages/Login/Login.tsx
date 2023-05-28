@@ -21,6 +21,7 @@ function Login() {
 
   return (
     <div className={styles.login}>
+      <div className={styles.login_header}>{getLocalizedText('signIn')}</div>
       <div className={styles.login__container}>
         <div className={styles.login_fields}>
           <input

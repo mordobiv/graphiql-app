@@ -17,6 +17,7 @@ function Reset() {
 
   return (
     <div className={styles.reset}>
+      <div className={styles.reset__header}>{getLocalizedText('resetHeader')}</div>
       <div className={styles.reset__container}>
         <input
           type="text"

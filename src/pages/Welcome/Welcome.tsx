@@ -4,7 +4,7 @@ import styles from './Welcome.module.scss'
 export default function Welcome() {
   return (
     <div className={styles.welcome_page}>
-    <div className={styles.welcome__text}>{getLocalizedText('welcome')}</div>
+    <div className={styles.welcome__header}>{getLocalizedText('welcome')}</div>
     <div className={styles.course}>
       <div>RS School React FE 2023 Q1</div>
       <div>{getLocalizedText('startDate')}: 13.03.2023</div>

@@ -1,9 +1,12 @@
 .welcome_page {
   margin: 5%;
 
-  .welcome__text {
+  .welcome__header {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
     text-align: center;
-    margin: 30px;
+    margin-bottom: 30px;
   }
 
   .course {

@@ -26,6 +26,7 @@ function Register() {
 
   return (
     <div className={styles.register}>
+      <div className={styles.register_header}>{getLocalizedText('signUp')}</div>
       <div className={styles.register__container}>
         <div className={styles.register__fields}>
           <input

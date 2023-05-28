@@ -70,7 +70,11 @@ const translations = {
   miras: {
     en: "Miras Suleimen",
     ru: "Мирас Сулеймен"
-  }
+  },
+  resetHeader: {
+    en: "Reset password",
+    ru: "Восстановить пароль",
+  },
 };
 
 export default translations;
