@@ -39,6 +39,7 @@ function Login() {
         <button
           className={styles.login__btn}
           onClick={() => logInWithEmailAndPassword(email, password)}
+          disabled={!email || !password}
         >
           {getLocalizedText('login')}
         </button>

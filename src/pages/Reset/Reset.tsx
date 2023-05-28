@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { auth, sendPasswordReset } from "../../firebase";
 import { getLocalizedText } from "../../services/localization-service";
 import styles from './Reset.module.scss';
+import isEmailIncorrect from "../../helpers/email-validation";
 
 function Reset() {
   const [email, setEmail] = useState("");
@@ -29,6 +30,7 @@ function Reset() {
         <button
           className={styles.reset__btn}
           onClick={() => sendPasswordReset(email)}
+          disabled={isEmailIncorrect(email)}
         >
           {getLocalizedText('resetHint')}
         </button>
