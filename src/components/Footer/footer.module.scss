@@ -1,0 +1,42 @@
+.footer {
+  font-size: 14px;
+  width: 100%;
+  display: flex;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: auto;
+  border-top: 1px solid gainsboro;
+  height: 100px;
+  background-color: gainsboro;
+
+  .githubs {
+
+    .github {
+      display: flex;
+      margin-right: 20px;
+      align-items: center;
+      
+      .github_logo {
+        margin-right: 5px;
+
+        .github_logo__img {
+          width: 25px;
+        }
+      }
+
+      .github_link {
+        
+      }
+    }
+  }
+
+  .course {
+
+    .course_logo {
+      height: 50px;
+    }
+  }
+}
