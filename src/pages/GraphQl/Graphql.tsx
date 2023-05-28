@@ -1,9 +1,15 @@
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { setQuery, setVariables, setRepsonse, setHeaders, switchVariablesSection, switchHeadersSection } from "../../store/graphiql";
+import { useEffect } from "react";
 import styles from './Graphql.module.scss';
 import { getLocalizedText } from "../../services/localization-service";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../firebase";
+import { useNavigate } from "react-router-dom";
 
 export default function GraphQl() {
+  const [user, loading, error] = useAuthState(auth);
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const query = useAppSelector((state) => state.graphiqlReducer.query);
   const variables = useAppSelector((state) => state.graphiqlReducer.variables);
@@ -11,6 +17,12 @@ export default function GraphQl() {
   const headers = useAppSelector((state) => state.graphiqlReducer.headers);
   const isVariablesSectionHidden = useAppSelector((state) => state.graphiqlReducer.isVariablesSectionHidden);
   const isHeadersSectionHidden = useAppSelector((state) => state.graphiqlReducer.isHeadersSectionHidden);
+
+  useEffect(() => {
+    if (loading) return;
+    if (!user) navigate("/welcome");
+  }, [user, loading]);
+
 
   return (
     <div className={styles.graphql}>
@@ -86,8 +98,6 @@ export default function GraphQl() {
       query: queryContent,
     }
     if (variables) body['variables'] = JSON.parse(variables);
-
-
     const finalHeaders: {key: string} = headers ? JSON.parse(headers) : {};
 
     const newHeaders = new Headers({"Content-Type": "application/json"});

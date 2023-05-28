@@ -61,6 +61,7 @@
           .editor_button {
             display: block;
             width: 100%;
+            background-color: limegreen;
           }
         }
 
@@ -88,6 +89,7 @@
 
           .graphql_vars_headers_close {
             color: red;
+            margin-top: 10px;
 
             &:hover {
               cursor: pointer;

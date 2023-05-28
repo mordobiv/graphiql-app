@@ -83,6 +83,14 @@ const translations = {
     en: 'Headers',
     ru: 'Заголовки',
   },
+  mainPage: {
+    en: 'Main page',
+    ru: 'Главная',
+  },
+  graphQLDescription:{
+    en: 'GraphQL is an open-source data query and manipulation language for APIs and a query runtime engine. GraphQL enables declarative data fetching where a client can specify exactly what data it needs from an API.',
+    ru: 'GraphQL - это язык запросов к данным и манипулирования ими с открытым исходным кодом для API и механизма выполнения запросов. GraphQL обеспечивает декларативную выборку данных, когда клиент может точно указать, какие данные ему нужны из API.'
+  }
 };
 
 export default translations;

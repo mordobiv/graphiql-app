@@ -14,6 +14,7 @@ function Register() {
   const [name, setName] = useState("");
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
+
   const register = () => {
     if (!name) alert("Please enter name");
     registerWithEmailAndPassword(name, email, password);
@@ -21,7 +22,7 @@ function Register() {
 
   useEffect(() => {
     if (loading) return;
-    if (user) navigate("/dashboard");
+    if (user) navigate("/");
   }, [user, loading]);
 
   return (
@@ -51,21 +52,21 @@ function Register() {
             placeholder={getLocalizedText('password')}
           />
         </div>
-        <button className={styles.register__btn} onClick={register} disabled={isPasswordCorrect(password)}>
+        <button className={styles.register__btn} onClick={register} disabled={isPasswordIncorrect(password)}>
           {getLocalizedText('signUp')}
         </button>
       </div>
       <div>
         <div>
           {getLocalizedText('alreadyHaveAccount')}
-          <Link to="/">  {getLocalizedText('signIn')}</Link>
+          <Link to="/login">  {getLocalizedText('signIn')}</Link>
         </div>
       </div>
     </div>
   );
 }
 
-function isPasswordCorrect(password: string) {
+function isPasswordIncorrect(password: string) {
   if (password.length < 9) return true;
   if (!password.match(/\W/)) return true;
   if (!password.match(/\d/)) return true;

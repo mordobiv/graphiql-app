@@ -7,6 +7,7 @@ import Auth from '../Auth/Auth'
 import LanguageSelection from '../Language/Language'
 import styles from './layout.module.scss';
 import Footer from '../Footer/footer';
+import { getLocalizedText } from '../../services/localization-service'
 
 export default function Layout() {
   const [user] = useAuthState(auth);
@@ -23,16 +24,18 @@ export default function Layout() {
   return (
     <>
       <header className={`${styles.header} ${isScrolled}`}>
-        {/* <div className={`${styles.isScrolled}`}> */}
-          {location === '/welcome' && user && <button onClick={() => navigate('/')}>Main page</button>}
-          <Auth />
-          <LanguageSelection />
-        {/* </div> */}
+        <LanguageSelection />
+        {location === '/welcome' && user && 
+          <button className={styles.main_btn} onClick={() => navigate('/')}>
+            <img src='/src/assets/home.png' />
+          </button>
+        }
+        <Auth />
       </header>
       <main className={styles.main}>
         <Outlet />
       </main>
       <Footer />
     </>
-  )
+  );
 }

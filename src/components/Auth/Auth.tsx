@@ -4,13 +4,14 @@ import SignIn from "./SignIn";
 import SignOut from "./SignOut";
 import SignUp from "./SignUp";
 import {useLocation} from 'react-router-dom';
+import style from './Auth.module.scss';
 
 export default function Auth() {
   const [user] = useAuthState(auth);
   const location = useLocation().pathname;
 
   return (
-    <>
+    <div className={style.auth}>
       { location === '/login' && <SignUp /> }
       { location === '/register' && <SignIn /> }
       { location === '/reset' &&
@@ -29,6 +30,6 @@ export default function Auth() {
           </>
         )
       }
-    </>
+    </div>
   );
 }
