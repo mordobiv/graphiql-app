@@ -37,13 +37,19 @@ function Register() {
             onChange={(e) => setName(e.target.value)}
             placeholder={getLocalizedText('fullName')}
           />
+          <div className={styles.hint}>
+            {getLocalizedText('nameHint')}
+          </div>
           <input
-            type="text"
+            type="email"
             className={styles.register__textBox}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder={getLocalizedText('email')}
           />
+          <div className={styles.hint}>
+            {getLocalizedText('emailHint')}
+          </div>
           <input
             type="password"
             className={styles.register__textBox}
@@ -51,16 +57,17 @@ function Register() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder={getLocalizedText('password')}
           />
+          <div className={styles.hint}>
+            {getLocalizedText('passwordHint')}
+          </div>
         </div>
-        <button className={styles.register__btn} onClick={register} disabled={isPasswordIncorrect(password)}>
+        <button className={styles.register__btn} onClick={register} disabled={isPasswordIncorrect(password) || !name || isEmailIncorrect(email)}>
           {getLocalizedText('signUp')}
         </button>
       </div>
       <div>
-        <div>
-          {getLocalizedText('alreadyHaveAccount')}
-          <Link to="/login">  {getLocalizedText('signIn')}</Link>
-        </div>
+        {getLocalizedText('alreadyHaveAccount')}
+        <Link to="/login">  {getLocalizedText('signIn')}</Link>
       </div>
     </div>
   );
@@ -77,6 +84,14 @@ function isPasswordIncorrect(password: string) {
   }
 
   return isLetterFound;
+}
+
+function isEmailIncorrect(email: string) {
+  return !String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
 }
 
 export default Register;

@@ -11,14 +11,24 @@
 
   .register__container {
     display: flex;
-    margin-bottom: 30px;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
     
     .register__fields {
       display: flex;
       flex-direction: column;
+      width: 50%;
 
       .register__textBox {
         margin: 10px;
+      }
+
+      .hint {
+        font-style: italic;
+        color: gray;
+        font-size: 14px;
+        margin: 0 10px;
       }
     }
 
