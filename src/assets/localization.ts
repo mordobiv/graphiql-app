@@ -75,6 +75,34 @@ const translations = {
     en: "Reset password",
     ru: "Восстановить пароль",
   },
+  variables: {
+    en: 'Variables',
+    ru: 'Переменные',
+  },
+  headers: {
+    en: 'Headers',
+    ru: 'Заголовки',
+  },
+  mainPage: {
+    en: 'Main page',
+    ru: 'Главная',
+  },
+  graphQLDescription:{
+    en: 'GraphQL is an open-source data query and manipulation language for APIs and a query runtime engine. GraphQL enables declarative data fetching where a client can specify exactly what data it needs from an API.',
+    ru: 'GraphQL - это язык запросов к данным и манипулирования ими с открытым исходным кодом для API и механизма выполнения запросов. GraphQL обеспечивает декларативную выборку данных, когда клиент может точно указать, какие данные ему нужны из API.'
+  },
+  passwordHint: {
+    en: 'Password should contain  minimum 8 symbols, at least one letter, one digit, one special character',
+    ru: 'Пароль должен содержать минимум 8 символов, минимум одну букву, одну цифру и один специальный символ',
+  },
+  emailHint: {
+    en: 'Email address should be valid',
+    ru: 'Е-мейл адрес должен быть валидным',
+  },
+  nameHint: {
+    en: 'Name should be filled',
+    ru: 'Имя должно быть указано',
+  },
 };
 
 export default translations;

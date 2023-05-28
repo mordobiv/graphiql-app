@@ -12,10 +12,7 @@ function Login() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (loading) {
-      // maybe trigger a loading screen
-      return;
-    }
+    if (loading) return;
     if (user) navigate("/");
   }, [user, loading]);
 
@@ -42,6 +39,7 @@ function Login() {
         <button
           className={styles.login__btn}
           onClick={() => logInWithEmailAndPassword(email, password)}
+          disabled={!email || !password}
         >
           {getLocalizedText('login')}
         </button>

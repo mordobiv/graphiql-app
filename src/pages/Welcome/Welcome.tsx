@@ -12,8 +12,7 @@ export default function Welcome() {
     <div className={styles.project}>
       <div>GraphiQL {getLocalizedText('project')}</div>
       <div>
-        GraphQL is an open-source data query and manipulation language for APIs and a query runtime engine. GraphQL
-        enables declarative data fetching where a client can specify exactly what data it needs from an API.
+        {getLocalizedText('graphQLDescription')}
       </div>
     </div>
     <div className={styles.team}>

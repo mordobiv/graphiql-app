@@ -14,6 +14,7 @@ function Register() {
   const [name, setName] = useState("");
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
+
   const register = () => {
     if (!name) alert("Please enter name");
     registerWithEmailAndPassword(name, email, password);
@@ -21,7 +22,7 @@ function Register() {
 
   useEffect(() => {
     if (loading) return;
-    if (user) navigate("/dashboard");
+    if (user) navigate("/");
   }, [user, loading]);
 
   return (
@@ -36,13 +37,19 @@ function Register() {
             onChange={(e) => setName(e.target.value)}
             placeholder={getLocalizedText('fullName')}
           />
+          <div className={styles.hint}>
+            {getLocalizedText('nameHint')}
+          </div>
           <input
-            type="text"
+            type="email"
             className={styles.register__textBox}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder={getLocalizedText('email')}
           />
+          <div className={styles.hint}>
+            {getLocalizedText('emailHint')}
+          </div>
           <input
             type="password"
             className={styles.register__textBox}
@@ -50,22 +57,23 @@ function Register() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder={getLocalizedText('password')}
           />
+          <div className={styles.hint}>
+            {getLocalizedText('passwordHint')}
+          </div>
         </div>
-        <button className={styles.register__btn} onClick={register} disabled={isPasswordCorrect(password)}>
+        <button className={styles.register__btn} onClick={register} disabled={isPasswordIncorrect(password) || !name || isEmailIncorrect(email)}>
           {getLocalizedText('signUp')}
         </button>
       </div>
       <div>
-        <div>
-          {getLocalizedText('alreadyHaveAccount')}
-          <Link to="/">  {getLocalizedText('signIn')}</Link>
-        </div>
+        {getLocalizedText('alreadyHaveAccount')}
+        <Link to="/login">  {getLocalizedText('signIn')}</Link>
       </div>
     </div>
   );
 }
 
-function isPasswordCorrect(password: string) {
+function isPasswordIncorrect(password: string) {
   if (password.length < 9) return true;
   if (!password.match(/\W/)) return true;
   if (!password.match(/\d/)) return true;
@@ -76,6 +84,14 @@ function isPasswordCorrect(password: string) {
   }
 
   return isLetterFound;
+}
+
+function isEmailIncorrect(email: string) {
+  return !String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
 }
 
 export default Register;
