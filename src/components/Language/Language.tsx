@@ -1,13 +1,13 @@
-import { getLocalizedText } from '../../services/localization-service'
-import { useAppDispatch } from '../../store/hooks'
-import { switchLanguage } from '../../store/language'
+import { useAppDispatch } from '../../store/hooks';
+import { switchLanguage } from '../../store/language';
+import styles from './Language.module.scss';
 
 export default function LanguageSelection() {
   const dispatch = useAppDispatch()
 
   return (
     <div>
-      <button onClick={() => dispatch(switchLanguage())}>{getLocalizedText('switchLanguage')}</button>
+      <img className={styles.switcher} src='src/assets/ru-eng.png' onClick={() => dispatch(switchLanguage())} />
     </div>
   )
 }

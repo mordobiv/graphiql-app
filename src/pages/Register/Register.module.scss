@@ -1,0 +1,29 @@
+.register {
+  margin: 100px 0 40px;
+
+  .register_header {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .register__container {
+    display: flex;
+    margin-bottom: 30px;
+    
+    .register__fields {
+      display: flex;
+      flex-direction: column;
+
+      .register__textBox {
+        margin: 10px;
+      }
+    }
+
+    .register__btn {
+      width: 140px;
+    }
+  }
+}
